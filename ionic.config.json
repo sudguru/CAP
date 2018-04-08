@@ -1,0 +1,8 @@
+{
+  "name": "newcap",
+  "app_id": "76e90e13",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
