@@ -11,4 +11,7 @@ export class HomePage {
 
   }
 
+  goToDashboard() {
+    this.navCtrl.setRoot('TabsPage');
+  }
 }
