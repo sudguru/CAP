@@ -12,12 +12,13 @@
         <h1>Sign In with Your Phone Number</h1>
       
         <label for="phone">Phone Number</label><br>
-        <input type="text" [(ngModel)]="phoneNumber"  class="input" placeholder="9851012345"    maxlength="10">
+        <input type="text" [(ngModel)]="phoneNumber"  class="input" placeholder="9851012345"    maxlength="15">
       
         <div id="recaptcha-container"></div>
-      
-        <button (click)="sendLoginCode()">SMS Text Login Code</button>
-      
+
+
+        <button  ion-button  (click)="sendLoginCode()">SMS Text Login Code</button>
+        {{phoneNumber}}
         <div *ngIf="windowRef.confirmationResult">
           <hr>
           <label for="code">Enter your Verification Code Here</label><br>

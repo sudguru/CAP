@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { config } from './../../../app/config.firebase';
+import { Component } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
 import { WindowProvider } from '../../../providers/window/window';
 import * as firebase from 'firebase';
-
+@IonicPage()
 @Component({
-  selector: 'phone-login',
-  templateUrl: './phone-login.component.html',
-  styleUrls: ['./phone-login.component.scss']
+  selector: 'page-login',
+  templateUrl: 'login.html',
 })
 export class LoginPage {
 
@@ -19,11 +20,17 @@ export class LoginPage {
 
   constructor(private win: WindowProvider) { }
 
-  ionViewDidLoad() {
+  ionViewWillLoad() {
+    console.log('load');
     this.windowRef = this.win.windowRef
-    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
+    firebase.initializeApp(config)
+    
 
-    this.windowRef.recaptchaVerifier.render()
+  }
+
+  ionViewDidEnter() {
+    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
+    this.windowRef.recaptchaVerifier.render();
   }
 
 

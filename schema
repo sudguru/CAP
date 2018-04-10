@@ -1,0 +1,93 @@
+
+
+classes {
+    id, name
+}
+
+profile { 
+    userid, userType (guardian, teacher, student), specialStudentId, rollNumber
+    name, address, gender, phone, dob, generalNote
+    currentClassName, currentSection, isClassCaptain, isClassViceCaptain, isSchoolCaptain, mainpicture
+    fatherName, fatherMobile, fatherEmail, fatherEducation, fatherNotes
+    motherName, motherMobile, motherEmail, motherEducation, motherNotes
+    guardianName, guardiaNmobile, guardainEmail, guardainEducation, guardianNotes,
+    inchargeofClassName, inchargeofClassSection, bioData, teachingSubjects(["English", "Nepali"])
+}
+
+    students_physical {
+        id, date, height, weight, enterdById, enteredByName
+    }
+
+    students_note
+    {
+        id, noteType(Health, Academic, ECA, Complaints, Praises), date, note, images[], enterdById, enteredByName
+    }
+
+
+articles {
+    id, articleType (story, poem, joke, essay), tilte, body, images[], enterdById, enteredByName, enteredByStudentId, enteredByStudentName
+}
+
+//how notification is generated/created is a different story
+notification {
+    id, date, title, content, sentById, sendByName, receipients[]
+}
+
+siteContent {
+    id, title, body, category, enteredById, enteredByName, images[], videos[]
+}
+
+calendar
+{
+    id, classId, className, classSection (including All), title, body, enteredById, enteredByName, images[]
+}
+
+private_data_class {
+    id, privateType (routine, exam schedule, exam syllabus, home works) , classId, className, classSection, title, body
+}
+
+private_data_student {
+    id, privateType (Leave Notes -incoming, suggestion-incoming, appreciation, bus Routes, dues ), studentId, studentName, title, body
+}
+
+private_data_student_result {
+    id, studentId, studentName, specialSchoolId, examName, (subject ...), averagegrade, uploadDateTime, uploadedById, uploadedByName
+}
+
+private_data_billing {
+    id, studentId, studentName, specialSchoolId, (billingHeadres ...), previousdue, total, uploadDateTime, uploadedById, uploadedByName
+}
+
+
+Excel Exam Data sheet Sample - result - ExamSoftware
+
+id      |   studentId/Name      |   title                   |   body 
+---------------------------------------------------------------------------
+1       |   xx48d93v            |   First Term 2075 Result  | <ion-grid>......</ion-grid>   
+
+----ion-grid elaboration----
+Subject     |  Grade    | Grade Point   |   Highest
+-------------------------------------------
+English     |   A       |       3.6     |   A+
+Nepali      |   B       |       2.8     |   A
+==============================================
+Average     |   B+      |       3.2     
+
+Excel Exam Data sheet Sample - result - Billing Software
+
+id      |   studentId/Name      |   title                   |   body 
+-------------------------------------------------------------------------------------------
+1       |   xx48d93v            |   Billing Info Baisakh 2075 | <ion-grid>......</ion-grid>   
+
+----ion-grid elaboration----
+Particulars     |  Taxable    | Non Taxable  |   Total
+-----------------------------------------------------
+Tuition         |   2000      |              |   2000
+Bus             |             |      2500    |   2500
+=====================================================
+Sub Total       |   2000      |      2500    |   4500
+Tax             |     20      |         0    |     20
+Previous dues   |                                4000
+=====================================================
+Total Dues                                       8520
+Due Date: Jestha 15, 2075   

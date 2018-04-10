@@ -1,0 +1,28 @@
+Profile to exam, profile to billing + accounting communications:
+===============================================================
+# Avoid adding new students from App/Website
+# Only Admin CAN ADD New Student/Teacher using App/Website/Profiler Manager
+# New Student can be added Only using Profile Manager
+# Billing/Accounting + Exams + Profile Manager are installed in a SAME computer !important
+# Billing/Accouting & Exams USES Profle Manager's Data
+
+@incase Billing/Accounting, Exams and Profile Manager are installed in a different computer, 
+then also export students from profiler and import the data in each computer. 
+
+How the Parents are connected to their children in the App:
+==========================================================
+1. A student is created offline with father, mother and guardian emails
+2. New firebase users are created by SCHOOL using all father, mother and guardian emails
+    if email already exists then its ok, no problem, account has been already created.
+    Verification Email along with TEMPORARY password is sent to the Email
+3. Now Guardians/Parents can log in to the App using their email and TEMPORARY password, are prompted to change their password on the first login, Email Verification 
+    and Forgot Password Feature is always available.
+4. If the user is a guardian/parent then he/she will be automatically linked to the their child/children using by matching fatherEmail, motherEmail or guardainEmail
+5. If no link is found then a notice is displayed to the user to contact the school
+
+
+What can each individual teacher do?
+===================================
+1. Moderate Articles from students
+2. Can send notifications
+3. Can read Leave Notes if it is from a student of a class of which he/she is the class teacher.
